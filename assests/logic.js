@@ -1,3 +1,5 @@
+var text = $('#buttonText').val();
+function deezer (){
 fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem", {
 	"method": "GET",
 	"headers": {
@@ -12,8 +14,10 @@ fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem", {
 	console.error(err);
 });
 
+}
 
-fetch("https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=FHlXGGy5pkbqcfKrq9TAErHgeV0EHiMb", {
+function ticketMaster(){
+fetch("https://app.ticketmaster.com/discovery/v2/venue/"+text+".json?apikey=FHlXGGy5pkbqcfKrq9TAErHgeV0EHiMb", {
 	"method": "GET"
 	}
 )
@@ -23,9 +27,12 @@ fetch("https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=FHlXG
 .catch(err => {
 	console.error(err);
 });
+}
 
-
-
+function button() {
+	ticketMaster()
+	deezer()
+}
 // $.ajax({
 //     type:"GET",
 //     url:"https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=FHlXGGy5pkbqcfKrq9TAErHgeV0EHiMb",
