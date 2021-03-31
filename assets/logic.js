@@ -2,36 +2,29 @@ var text = ''
 var buttonsearch = $("#buttonSearch")
 // var bandName = '';
 
-
-
-
-
-function deezer() {
-    fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-key": "8d44b498cbmsh2179a60ff84b2a4p19a6fajsn4830609bdf3b",
-                "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
-            }
-        })
-        .then(response => {
-            // console.log(response);
-        })
-        .catch(err => {
-            console.error(err);
-        });
-
-}
-
+// function deezer() {
+//     fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=", {
+//             "method": "GET",
+//             "headers": {
+//                 "x-rapidapi-key": "8d44b498cbmsh2179a60ff84b2a4p19a6fajsn4830609bdf3b",
+//                 "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+//             }
+//         })
+//         .then(response => {
+//             // console.log(response);
+//         })
+//         .catch(err => {
+//             console.error(err);
+//         });
+// }
 
 function button() {
     text = $('.buttonText').val();
     ticketmaster()
-    deezer()
+    // deezer()
     console.log(text)
 
 }
-
 
 function ticketmaster() {
     $(".searchResults").empty();
@@ -44,7 +37,7 @@ function ticketmaster() {
             console.log(json)
             var eventName = json._embedded.events
             if (text == "") { 
-                $(".searchResults").append("please enter something")
+                $(".searchResults").append("<div class='eventInfo card-panel small center-align'>" + "Please enter a city" + "</div>")
             } else {
             for (var i = 0; i < eventName.length; i++) {
                  var bandName = eventName[i].name
@@ -53,12 +46,12 @@ function ticketmaster() {
                  var minPrice = eventName[i].priceRanges[0].min
                  var maxPrice = eventName[i].priceRanges[0].max
                  var searchUrl = eventName[i].url
-                 $(".searchResults").append("<div class='eventInfo'>" +
-                "<div><li>" + "the band name is: " + bandName + "</li>" +
-                "<li>" + "the venue is: " + venueName + "</li>" +
-                "<li>" + "prices range from:" + "$" + minPrice + " to " + "$" + maxPrice + "</li>" +
-                "<a href=" + searchUrl + " target = _blank>" +"click here for tickets" + "</a>"+ "</div>")
-                 
+                 $(".searchResults").append("<div class='eventInfo card-panel small center-align'>" +
+                "<li class='headliner'>" + bandName + "</li>" +
+                "<li class='venue'>" + "will be playing at the" + "</li>" +
+                "<li class='venueName'>" + venueName + "</li>" +
+                "<li class='price'>" + "Tickets range from: " + "$" + minPrice + " to " + "$" + maxPrice + "</li>" +
+                "<a class='btn-floating btn-large pulse red accent-2' href=" + searchUrl + " target = _blank>" +"Buy" + "</a>"+ "</div>")
             }
         }
         },
