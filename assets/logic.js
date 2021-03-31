@@ -62,6 +62,7 @@ function ticketmaster() {
             }
         }
         },
+        
         error: function(xhr, status, err) {
             // This time, we do not end up here!
         }
