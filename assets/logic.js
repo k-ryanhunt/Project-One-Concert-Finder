@@ -21,7 +21,6 @@ var buttonsearch = $("#buttonSearch")
 function button() {
     text = $('.buttonText').val();
     ticketmaster()
-        // deezer()
     console.log(text)
 
 }
@@ -55,7 +54,7 @@ function ticketmaster() {
                 }
             }
         },
-        
+
         error: function(xhr, status, err) {
             // This time, we do not end up here!
         }
