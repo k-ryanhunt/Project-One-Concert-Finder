@@ -1,7 +1,7 @@
 var text = ''
 var buttonsearch = $("#buttonSearch")
-
-
+var band = []
+    // var bandName = '';
 function button() {
     text = $('.buttonText').val();
     ticketmaster()
@@ -18,7 +18,6 @@ function ticketmaster() {
         dataType: "json",
         success: function(json) {
             console.log(json)
-
             if (!json._embedded) {
                 $(".searchResults").append("<div class='eventInfo card-panel small center-align'>" + "You suck live in a better city" + "</div>")
             } else {
@@ -29,23 +28,24 @@ function ticketmaster() {
                     for (var i = 0; i < eventName.length; i++) {
                         var artistName = json._embedded.events[i]._embedded.attractions[0].name
                         console.log(artistName)
+                        band = [artistName]
+                        console.log(band)
                         var bandName = eventName[i].name
                         var venueName = eventName[i]._embedded.venues[0].name
                             // second api gives us the variable "aristInfo"
-                        if (!eventName[i].priceRanges) {
+                        var LastFM = 'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=' + band + '&api_key=78661b1408a61c6f77a83efc09f78da4&format=json'
 
+                        if (!eventName[i].priceRanges) {
                             $(".searchResults").append("<div class='eventInfo card-panel small center-align'>" +
                                 "<li class='headliner'>" + bandName + "</li>" +
                                 "<li class='venue'>" + "will be playing at the " + "</li>" +
                                 "<li class='venueName'>" + venueName + "</li>" +
                                 "<li class='price'>" + "there is no price ranges availible" + "</li>" +
-                                "<li>" + artistInfo + "<li>" +
+                                // "<li>" + artistInfo + "<li>" +
                                 "<a class='btn-floating btn-large pulse red accent-2' href=" + searchUrl + " target = _blank>" + "Buy" + "</a>" + "</div>")
                         } else {
-
                             var minPrice = eventName[i].priceRanges[0].min
                             var maxPrice = eventName[i].priceRanges[0].max
-
                             var searchUrl = eventName[i].url
                             $(".searchResults").append("<div class='eventInfo card-panel small center-align'>" +
                                 "<li class='headliner'>" + bandName + "</li>" +
@@ -56,7 +56,18 @@ function ticketmaster() {
                                 "<a class='btn-floating btn-large pulse red accent-2' href=" + searchUrl + " target = _blank>" + "Buy" + "</a>" + "</div>")
                         }
                     }
-                }
+                    for (var i = 0; i < eventName.length; i++)
+                        fetch(LastFM)
+                        .then(
+                            function(data) {
+                                return data.json();
+                            })
+                        .then(response => {
+                                console.log(response);
+                            }
+
+                        )
+                };
             }
         },
 
