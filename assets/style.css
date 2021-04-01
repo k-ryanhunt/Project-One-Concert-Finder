@@ -1,70 +1,100 @@
 header {
-    font-family: Monoton;
-    font-size: 400%;
-    padding: 20px;
-    color: lightgreen;
-    text-shadow: 1px 1px yellow;
+  font-family: Monoton;
+  font-size: 300%;
+  padding: 20px;
+  color: lightgreen;
+  text-shadow: 1px 1px yellow;
 }
 
 body {
-    text-align: center;
-    font-family: "Roboto Condensed";
-    color: white;
+  text-align: center;
+  font-family: "Roboto Condensed";
+  color: white;
+  background-color: #535353;
 }
 
 li {
-    list-style-type: none;
-    padding: 4px;
+  list-style-type: none;
+  padding: 4px;
 }
 
 .jumbotron {
-    background-image: url("../images/background.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    padding: 15px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 2;
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 .buttonText {
-    color: cyan;
-    font-family: Bebas Neue;
-    font-size: 125%;
+  color: cyan;
+  font-family: Bebas Neue;
+  font-size: 125%;
 }
 
 .searchResults {
-    padding-top: 15%;
+  padding-top: 25%;
 }
 
 .eventInfo {
-    padding: 30px;
-    background-color: rgba(21, 21, 21, 0.9);
+  padding: 30px;
+  background-color: rgba(21, 21, 21, 0.9);
 }
 
 .headliner {
-    background: linear-gradient( to right, #ff3d00, #eeff41, lightgreen, #eeff41, #ff3d00);
-    background-clip: border-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: Crushed;
-    font-size: 250%;
+  background: linear-gradient(
+    to right,
+    #ff3d00,
+    #eeff41,
+    lightgreen,
+    #eeff41,
+    #ff3d00
+  );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Crushed;
+  font-size: 250%;
 }
 
 .venueName {
-    font-family: Bebas Neue;
-    font-size: 150%;
+  font-family: Bebas Neue;
+  font-size: 150%;
 }
 
 .price {
-    font-family: Bebas Neue;
-    font-size: 125%;
+  font-family: Bebas Neue;
+  font-size: 125%;
 }
 
 .btn-large {
-    font-weight: bolder;
-    margin-top: 10px;
-    color: white;
+  font-weight: bolder;
+  margin-top: 10px;
+  color: white;
+}
+
+@media only screen and (max-width:992) {
+  header,
+  .jumbotron {
+    font-size: 135%;
+    padding: 5px;
+  }
+  .searchResults {
+    margin-top: 20%;
+  }
+  .eventInfo,
+  .headliner,
+  .venueName {
+      font-size: 125%;
+      padding: 5px;
+  }
+  .price,
+  .btn-large {
+      font-size: 100%;
+      padding: 3px;
+  }
 }

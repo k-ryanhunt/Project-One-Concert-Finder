@@ -19,7 +19,7 @@ function ticketmaster() {
         success: function(json) {
             console.log(json)
             if (!json._embedded) {
-                $(".searchResults").append("<div class='eventInfo card-panel small center-align'>" + "You suck live in a better city" + "</div>")
+                $(".searchResults").append("<div class='eventInfo card-panel small center-align'>" + "There are no events in this city. <br> Please enter another city." + "</div>")
             } else {
                 var eventName = json._embedded.events
                 if (text == "") {
@@ -40,7 +40,7 @@ function ticketmaster() {
                                 "<li class='headliner'>" + bandName + "</li>" +
                                 "<li class='venue'>" + "will be playing at the " + "</li>" +
                                 "<li class='venueName'>" + venueName + "</li>" +
-                                "<li class='price'>" + "there is no price ranges availible" + "</li>" +
+                                "<li class='price'>" + "Ticket range is unavailable for this event." + "</li>" +
                                 // "<li>" + artistInfo + "<li>" +
                                 "<a class='btn-floating btn-large pulse red accent-2' href=" + searchUrl + " target = _blank>" + "Buy" + "</a>" + "</div>")
                         } else {
