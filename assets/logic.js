@@ -19,7 +19,7 @@ function ticketmaster() {
         success: function(json) {
             console.log(json)
             if (!json._embedded) {
-                $(".searchResults").append("<div class='eventInfo card-panel small center-align'>" + "You suck live in a better city" + "</div>")
+                $(".searchResults").append("<div class='eventInfo card-panel small center-align'>" + "There are no events in this city. <br> Please enter another city." + "</div>")
             } else {
                 var eventName = json._embedded.events
                 if (text == "") {
@@ -36,6 +36,7 @@ function ticketmaster() {
                         var LastFM = 'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=' + band + '&api_key=78661b1408a61c6f77a83efc09f78da4&format=json'
 
                         if (!eventName[i].priceRanges) {
+
                             fetch(LastFM)
                             .then(
                                 function(response) {
@@ -54,6 +55,7 @@ function ticketmaster() {
                                 }
 
                             )
+
                         } else {
                             var minPrice = eventName[i].priceRanges[0].min
                             var maxPrice = eventName[i].priceRanges[0].max
