@@ -5,7 +5,7 @@ var band = []
 function button() {
     text = $('.buttonText').val();
     ticketmaster()
-    console.log(text)
+    // console.log(text)
         // console.log(artistName)
 }
 
@@ -27,46 +27,65 @@ function ticketmaster() {
                 } else {
                     for (var i = 0; i < eventName.length; i++) {
                         var artistName = json._embedded.events[i]._embedded.attractions[0].name
-                        console.log(artistName)
+                        // console.log(artistName)
                         band = [artistName]
-                        console.log(band)
+                        // console.log(band)
                         var bandName = eventName[i].name
                         var venueName = eventName[i]._embedded.venues[0].name
                             // second api gives us the variable "aristInfo"
                         var LastFM = 'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=' + band + '&api_key=78661b1408a61c6f77a83efc09f78da4&format=json'
 
                         if (!eventName[i].priceRanges) {
-                            $(".searchResults").append("<div class='eventInfo card-panel small center-align'>" +
-                                "<li class='headliner'>" + bandName + "</li>" +
-                                "<li class='venue'>" + "will be playing at the " + "</li>" +
-                                "<li class='venueName'>" + venueName + "</li>" +
-                                "<li class='price'>" + "Ticket range is unavailable for this event." + "</li>" +
-                                // "<li>" + artistInfo + "<li>" +
-                                "<a class='btn-floating btn-large pulse red accent-2' href=" + searchUrl + " target = _blank>" + "Buy" + "</a>" + "</div>")
+
+                            fetch(LastFM)
+                            .then(
+                                function(response) {
+                                    return response.json();
+                                })
+                            .then(data => {
+                                    var artistInfo = data.artist[i].bio.summary
+                                    $(".searchResults").append("<div class='eventInfo card-panel small center-align'>" +
+                                    "<li class='headliner'>" + bandName + "</li>" +
+                                    "<li class='venue'>" + "will be playing at the " + "</li>" +
+                                    "<li class='venueName'>" + venueName + "</li>" +
+                                    "<li class='price'>" + "there is no price ranges availible" + "</li>" +
+                                    "<li>" + artistInfo + "<li>" +
+                                    "<a class='btn-floating btn-large pulse red accent-2' href=" + searchUrl + " target = _blank>" + "Buy" + "</a>" + "</div>")
+                                    
+                                }
+
+                            )
+
                         } else {
                             var minPrice = eventName[i].priceRanges[0].min
                             var maxPrice = eventName[i].priceRanges[0].max
                             var searchUrl = eventName[i].url
+                            
+                            
                             $(".searchResults").append("<div class='eventInfo card-panel small center-align'>" +
                                 "<li class='headliner'>" + bandName + "</li>" +
                                 "<li class='venue'>" + "will be playing at the" + "</li>" +
                                 "<li class='venueName'>" + venueName + "</li>" +
                                 "<li class='price'>" + "Tickets range from: " + "$" + minPrice + " to " + "$" + maxPrice + "</li>" +
-                                // "<li>" + artistInfo + "<li>" +
+                                "<li class = 'artistInfoResults'> <li>" +
                                 "<a class='btn-floating btn-large pulse red accent-2' href=" + searchUrl + " target = _blank>" + "Buy" + "</a>" + "</div>")
+                                fetch(LastFM)
+                                .then(
+                                    function(response) {
+                                        return response.json();
+                                    })
+                                .then(data => {
+                                        //this is appending artist info to the above class made on line 68
+                                        var artistInfo = data.artist.bio.summary
+                                        console.log(data)
+                                        $(".artistInfoResults").append(artistInfo)
+                                        
+                                    }
+    
+                                )     
                         }
                     }
-                    for (var i = 0; i < eventName.length; i++)
-                        fetch(LastFM)
-                        .then(
-                            function(data) {
-                                return data.json();
-                            })
-                        .then(response => {
-                                console.log(response);
-                            }
-
-                        )
+    
                 };
             }
         },
