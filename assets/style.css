@@ -29,12 +29,19 @@ li {
     z-index: 2;
 }
 
-.buttonText,
-.History {
+.buttonText {
     color: cyan;
     font-family: Bebas Neue;
     font-size: 125%;
     max-width: 45%!important;
+}
+
+.History {
+    color: #212121;
+    font-family: Bebas Neue;
+    font-size: 125%;
+    max-width: 45%!important;
+    text-shadow: none;
 }
 
 .eventInfo {
@@ -60,6 +67,21 @@ li {
     font-family: Bebas Neue;
     font-size: 125%;
 }
+
+.artistInfoResults0,
+.artistInfoResults1,
+.artistInfoResults2,
+.artistInfoResults3, 
+.artistInfoResults4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+
+  li:checked + p {
+    -webkit-line-clamp: unset;
+  }
 
 .btn-large {
     font-weight: bolder;
