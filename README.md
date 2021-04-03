@@ -16,6 +16,8 @@ The goal of this assignment was to make a mobile first app that uses two api cal
 
 #### Deployed application
 
+https://baystaub.github.io/concerts-in-covid/
+
 ##### Screenshot
 
 ![screenshot](./images/image.png)
