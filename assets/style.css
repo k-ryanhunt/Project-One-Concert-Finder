@@ -1,119 +1,189 @@
 header {
-    font-family: Monoton;
-    font-size: 300%;
-    padding: 20px;
-    color: lightgreen;
-    text-shadow: 1px 1px yellow;
+  font-family: Monoton;
+  font-size: 300%;
+  padding: 20px;
+  color: lightgreen;
+  text-shadow: 1px 1px yellow;
 }
 
 body {
-    text-align: center;
-    font-family: "Roboto Condensed";
-    color: white;
-    background-color: #535353;
+  text-align: center;
+  font-family: "Roboto Condensed";
+  color: white;
+  background-color: #535353;
 }
 
 li {
-    list-style-type: none;
-    padding: 4px;
+  list-style-type: none;
+  padding: 4px;
 }
 
 .jumbotron {
-    background-image: url("../images/background.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    padding: 15px;
-    top: 0;
-    width: 100%;
-    z-index: 2;
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 15px;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 .buttonText {
-    color: cyan;
-    font-family: Bebas Neue;
-    font-size: 125%;
-    max-width: 45%!important;
+  color: cyan;
+  font-family: Bebas Neue;
+  font-size: 125%;
+  max-width: 45% !important;
 }
 
 .History {
-    color: #212121;
-    font-family: Bebas Neue;
-    font-size: 125%;
-    max-width: 45%!important;
-    text-shadow: none;
+  color: #212121;
+  font-family: Bebas Neue;
+  font-size: 125%;
+  max-width: 45% !important;
+  text-shadow: none;
 }
 
 .eventInfo {
-    padding: 30px;
-    background-color: rgba(21, 21, 21, 0.9);
+  padding: 30px;
+  background-color: rgba(21, 21, 21, 0.9);
 }
 
 .headliner {
-    background: linear-gradient( to right, #ff3d00, #eeff41, lightgreen, #eeff41, #ff3d00);
-    background-clip: border-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: Crushed;
-    font-size: 250%;
+  background: linear-gradient(
+    to right,
+    #ff3d00,
+    #eeff41,
+    lightgreen,
+    #eeff41,
+    #ff3d00
+  );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Crushed;
+  font-size: 250%;
 }
 
 .venueName {
-    font-family: Bebas Neue;
-    font-size: 150%;
+  font-family: Bebas Neue;
+  font-size: 150%;
 }
 
 .price {
-    font-family: Bebas Neue;
-    font-size: 125%;
+  font-family: Bebas Neue;
+  font-size: 125%;
 }
 
 .artistInfoResults0,
 .artistInfoResults1,
 .artistInfoResults2,
-.artistInfoResults3, 
+.artistInfoResults3,
 .artistInfoResults4 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
-  }
-
-  li:checked + p {
-    -webkit-line-clamp: unset;
-  }
-
-.btn-large {
-    font-weight: bolder;
-    margin-top: 10px;
-    color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-@media only screen and (max-width:992) {
-    header,
-    .jumbotron {
-        font-size: 135%;
-        padding: 5px;
-    }
-    .searchResults {
-        margin-top: 1%;
-    }
-    .eventInfo,
-    .headliner,
-    .venueName {
-        font-size: 125%;
-        padding: 5px;
-    }
-    .price,
-    .btn-large {
-        font-size: 100%;
-        padding: 3px;
-    }
+li:checked + p {
+  -webkit-line-clamp: unset;
+}
+
+.btn-large {
+  font-weight: bolder;
+  margin-top: 10px;
+  color: white;
+}
+
+
+@media (min-width: 0px) and (max-width: 800px) {
+  header,
+  .jumbotron {
+    font-size: 125%;
+    padding: 1px;
+  }
+  .searchResults {
+    margin-top: 1%;
+  }
+  .headliner {
+      font-size: 125%;
+  }
+  .eventInfo,
+  .venueName,
+  .buttonText {
+    font-size: 100%;
+    padding: 1px;
+  }
+  li {
+    font-size: 14px;
+  }
+  .eventInfo {
+    margin-left: 15%;
+  }
+  .price,
+  .btn-large {
+    font-size: 100%;
+    padding: 3px;
+  }
+  .artistInfoResults0,
+  .artistInfoResults1,
+  .artistInfoResults2,
+  .artistInfoResults3,
+  .artistInfoResults4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1024px) {
+  header,
+  .jumbotron {
+    font-size: 125%;
+    padding: 1px;
+  }
+  .searchResults {
+    margin-top: 1%;
+  }
+  .headliner {
+    font-size: 125%;
+}
+  .eventInfo,
+  .venueName,
+  .buttonText {
+    font-size: 100%;
+    padding: 1px;
+  }
+  li {
+    font-size: 14px;
+  }
+  .eventInfo {
+    margin-left: 20%;
+  }
+  .price,
+  .btn-large {
+    font-size: 100%;
+    padding: 3px;
+  }
+  .artistInfoResults0,
+  .artistInfoResults1,
+  .artistInfoResults2,
+  .artistInfoResults3,
+  .artistInfoResults4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 12px;
+  }
 }
 
 #style {
-    position: absolute;
-    margin-top: 120px;
-    margin-left: 1px;
-    font-size: 25px;
+  position: absolute;
+  margin-top: 120px;
+  margin-left: 1px;
+  font-size: 25px;
 }
