@@ -17,12 +17,13 @@ This was my first group project in University of Denver's full stack bootcamp. W
 * jQuery
 * Ajax
 
-## Contributors
+## Developers
 
-* https://github.com/baystaub
-* https://github.com/markraud
-* https://github.com/ziffoit
-* https://github.com/micahshu
+* @k-ryanhunt
+* @baystaub
+* @markraud
+* @ziffoit
+* @micahshu
 
 ## Deployed application
 
