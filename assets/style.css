@@ -1,25 +1,29 @@
 header {
-  font-family: Monoton;
-  font-size: 300%;
+  font-family: 'Lobster Two';
+  font-size: 7rem;
   padding: 20px;
-  color: lightgreen;
-  text-shadow: 1px 1px yellow;
+  color: black;
+  text-shadow: 1px 1px rgb(64, 255, 105);
+  
 }
 
 body {
   text-align: center;
-  font-family: "Roboto Condensed";
-  color: white;
-  background-color: #535353;
+  font-family: 'Montserrat';
 }
 
 li {
   list-style-type: none;
   padding: 4px;
+  font-family: 'Montserrat';
+}
+
+#style {
+  color: lightgray;
+  font-style: italic;
 }
 
 .jumbotron {
-  background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -30,60 +34,62 @@ li {
 }
 
 .buttonText {
-  color: cyan;
-  font-family: Bebas Neue;
-  font-size: 125%;
-  max-width: 45% !important;
+  font-family: 'Montserrat';
+  max-width: 20% !important;
 }
 
 .History {
   color: #212121;
-  font-family: Bebas Neue;
+  font-family: 'Montserrat';
   font-size: 125%;
   max-width: 45% !important;
   text-shadow: none;
 }
 
 .eventInfo {
-  padding: 30px;
-  background-color: rgba(21, 21, 21, 0.9);
+  padding: 50px;
+  border-radius: 50px;
+  background-color: rgb(38, 149, 218);
 }
 
 .headliner {
   background: linear-gradient(
     to right,
-    #ff3d00,
     #eeff41,
-    lightgreen,
-    #eeff41,
-    #ff3d00
+    white,
+    #eeff41
   );
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: Crushed;
-  font-size: 250%;
+  font-family: 'Lobster Two';
+  font-size: 3rem;
 }
 
 .venueName {
-  font-family: Bebas Neue;
+  font-family: 'Montserrat';
+  font-weight: 800;
   font-size: 150%;
+  color: white;
 }
 
 .price {
-  font-family: Bebas Neue;
-  font-size: 125%;
+  font-family: 'Montserrat';
+  font-size: 115%;
+  color: white;
 }
 
 .artistInfoResults0,
 .artistInfoResults1,
 .artistInfoResults2,
 .artistInfoResults3,
-.artistInfoResults4 {
+.artistInfoResults4,
+.venue {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  color: white;
 }
 
 li:checked + p {
@@ -91,7 +97,6 @@ li:checked + p {
 }
 
 .btn-large {
-  font-weight: bolder;
   margin-top: 10px;
   color: white;
 }
