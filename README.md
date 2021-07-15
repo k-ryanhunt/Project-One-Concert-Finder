@@ -19,11 +19,11 @@ This was my first group project in University of Denver's full stack bootcamp. W
 
 ## Developers
 
-* @k-ryanhunt
-* @baystaub
-* @markraud
-* @ziffoit
-* @micahshu
+* https://github.com/k-ryanhunt
+* https://github.com/baystaub
+* https://github.com/markraud
+* https://github.com/ziffoit
+* https://github.com/micahshu
 
 ## Deployed application
 
