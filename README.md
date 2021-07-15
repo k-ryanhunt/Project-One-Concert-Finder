@@ -9,6 +9,10 @@ This was my first group project in University of Denver's full stack bootcamp. W
 3. Along with the bands that will be playing there, you will see the venue, price ranges, and information regarding that particular artist.
 4. If you are interested in purchasing a ticket, simply click the BUY button and it will redirect you to TicketMaster where you are then able to purchase those tickets.
 
+## Screenshot
+
+![screenshot](./images/image.png)
+
 ## Technologies Used
 
 * HTML
@@ -28,7 +32,3 @@ This was my first group project in University of Denver's full stack bootcamp. W
 ## Deployed application
 
 https://k-ryanhunt.github.io/Project-One-Concert-Finder/
-
-## Screenshot
-
-![screenshot](./images/image.png)
