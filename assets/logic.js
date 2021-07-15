@@ -16,7 +16,7 @@ function button() {
 }
 
 function ticketmaster() {
-  $(".searchResults").empty();
+  $(".searchResults").empty('');
   $.ajax({
     type: "GET",
     url:

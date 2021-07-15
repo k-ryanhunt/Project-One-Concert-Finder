@@ -11,18 +11,18 @@ This was my first group project in University of Denver's full stack bootcamp. W
 
 ## Technologies Used
 
-- HTML
-- CSS
-- JavaScript
-- jQuery
-- Ajax
+* HTML
+* CSS
+* JavaScript
+* jQuery
+* Ajax
 
 ## Contributors
 
-https://github.com/baystaub
-https://github.com/markraud
-https://github.com/ziffoit
-https://github.com/micahshu
+* https://github.com/baystaub
+* https://github.com/markraud
+* https://github.com/ziffoit
+* https://github.com/micahshu
 
 ## Deployed application
 
@@ -30,4 +30,4 @@ https://k-ryanhunt.github.io/Project-One-Concert-Finder/
 
 ## Screenshot
 
-![screenshot](./images/)
+![screenshot](./images/image.png)
